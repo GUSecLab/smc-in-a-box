@@ -5,18 +5,18 @@
  "Key_path": "/path to private key",
  "Port": "50004",
  "Complaint_urls": [
-  "http://127.0.0.1:50002/complaint/",
-  "http://127.0.0.1:50003/complaint/",
-  "http://127.0.0.1:50001/complaint/",
-  "http://127.0.0.1:50005/complaint/",
-  "http://127.0.0.1:50006/complaint/"
+  "http://server2:50002/complaint/",
+  "http://server3:50003/complaint/",
+  "http://server1:50001/complaint/",
+  "http://server5:50005/complaint/",
+  "http://server6:50006/complaint/"
  ],
  "Masked_share_urls": [
-  "http://127.0.0.1:50002/maskedShare/",
-  "http://127.0.0.1:50003/maskedShare/",
-  "http://127.0.0.1:50001/maskedShare/",
-  "http://127.0.0.1:50005/maskedShare/",
-  "http://127.0.0.1:50006/maskedShare/"
+  "http://server2:50002/maskedShare/",
+  "http://server3:50003/maskedShare/",
+  "http://server1:50001/maskedShare/",
+  "http://server5:50005/maskedShare/",
+  "http://server6:50006/maskedShare/"
  ],
  "Share_Index": 4,
  "N": 6,

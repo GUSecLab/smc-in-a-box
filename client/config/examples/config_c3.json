@@ -2,12 +2,12 @@
  "Client_ID": "c3",
  "Token": "t3",
  "URLs": [
-  "http://127.0.0.1:50001/client/",
-  "http://127.0.0.1:50002/client/",
-  "http://127.0.0.1:50003/client/",
-  "http://127.0.0.1:50004/client/",
-  "http://127.0.0.1:50005/client/",
-  "http://127.0.0.1:50006/client/"
+  "http://server1:50001/client/",
+  "http://server2:50002/client/",
+  "http://server3:50003/client/",
+  "http://server4:50004/client/",
+  "http://server5:50005/client/",
+  "http://server6:50006/client/"
  ],
  "N": 6,
  "T": 1,

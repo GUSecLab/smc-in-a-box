@@ -7,5 +7,5 @@
     "T": 1,
     "K": 1,
     "Q": 10631,
-    "URLs": ["http://127.0.0.1:50001/experiment/", "http://127.0.0.1:50002/experiment/", "http://127.0.0.1:50003/experiment/", "http://127.0.0.1:50004/experiment/", "http://127.0.0.1:50005/experiment/", "http://127.0.0.1:50006/experiment/"]
+    "URLs": ["http://server1:50001/experiment/", "http://server2:50002/experiment/", "http://server3:50003/experiment/", "http://server4:50004/experiment/", "http://server5:50005/experiment/", "http://server6:50006/experiment/"]
 }
