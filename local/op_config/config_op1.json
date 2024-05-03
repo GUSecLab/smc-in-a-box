@@ -1,0 +1,10 @@
+{
+ "OutputParty_ID": "op1",
+ "Cert_path": "/path to certificate",
+ "Key_path": "/path to private key",
+ "Port": "60000",
+ "N": 6,
+ "T": 1,
+ "K": 2,
+ "Q": 10631
+}

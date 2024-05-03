@@ -15,7 +15,7 @@ import (
 
 func main() {
 
-	n_client := 6
+	n_client := 50
 	n_exp := 1
 	n_input := []int{2} // For the first experiment, client's input has one value
 
@@ -42,7 +42,7 @@ func main() {
 
 	output_gen.GenerateOPInput(n_exp, clientShareDue, t3, "./op_input")
 
-	run(n_server, n_outputparty, n_client)
+	// un(n_server, n_outputparty, n_client)
 
 }
 

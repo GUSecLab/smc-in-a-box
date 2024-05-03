@@ -1,0 +1,18 @@
+{
+ "Client_ID": "c50",
+ "Token": "t50",
+ "URLs": [
+  "http://server1:50001/client/",
+  "http://server2:50002/client/",
+  "http://server3:50003/client/",
+  "http://server4:50004/client/",
+  "http://server5:50005/client/",
+  "http://server6:50006/client/"
+ ],
+ "N": 6,
+ "T": 1,
+ "Q": 10631,
+ "N_secrets": 10,
+ "M": 2,
+ "N_open": 3
+}

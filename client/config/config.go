@@ -26,6 +26,7 @@ func NewConfig() *Client {
 func Load(path string) *Client {
 	file, err := os.Open(path)
 	if err != nil {
+		log.Printf("error opening the JSON file\n")
 		log.Fatalf("%s", err)
 		return nil
 	}
@@ -39,5 +40,6 @@ func Load(path string) *Client {
 		log.Fatalf("unable to read from client config file: %s", err)
 		return nil
 	}
+	log.Printf("finished reading config file \n")
 	return &config
 }

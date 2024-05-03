@@ -1,0 +1,42 @@
+{
+ "Server_ID": "s2",
+ "Token": "stk2",
+ "Cert_path": "/path to certificate",
+ "Key_path": "/path to private key",
+ "Port": "50002",
+ "Complaint_urls": [
+  "http://127.0.0.1:50001/complaint/",
+  "http://127.0.0.1:50003/complaint/",
+  "http://127.0.0.1:50004/complaint/",
+  "http://127.0.0.1:50005/complaint/",
+  "http://127.0.0.1:50006/complaint/"
+ ],
+ "Masked_share_urls": [
+  "http://127.0.0.1:50001/maskedShare/",
+  "http://127.0.0.1:50003/maskedShare/",
+  "http://127.0.0.1:50004/maskedShare/",
+  "http://127.0.0.1:50005/maskedShare/",
+  "http://127.0.0.1:50006/maskedShare/"
+ ],
+ "Dolev_complaint_urls": [
+  "http://127.0.0.1:50002/dolevComplaint/",
+  "http://127.0.0.1:50003/dolevComplaint/",
+  "http://127.0.0.1:50004/dolevComplaint/",
+  "http://127.0.0.1:50005/dolevComplaint/",
+  "http://127.0.0.1:50006/dolevComplaint/"
+ ],
+ "Dolev_masked_share_urls": [
+  "http://127.0.0.1:50002/dolevMaskedShare/",
+  "http://127.0.0.1:50003/dolevMaskedShare/",
+  "http://127.0.0.1:50004/dolevMaskedShare/",
+  "http://127.0.0.1:50005/dolevMaskedShare/",
+  "http://127.0.0.1:50006/dolevMaskedShare/"
+ ],
+ "Share_Index": 2,
+ "N": 6,
+ "T": 1,
+ "Q": 10631,
+ "N_secrets": 2,
+ "M": 1,
+ "N_open": 3
+}

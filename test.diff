@@ -1,0 +1,112 @@
+[1mdiff --git a/client/cmd/cmd b/client/cmd/cmd[m
+[1mindex 2311da8..fbc4888 100755[m
+Binary files a/client/cmd/cmd and b/client/cmd/cmd differ
+[1mdiff --git a/client/config/config.go b/client/config/config.go[m
+[1mindex 1e278d3..26cd408 100644[m
+[1m--- a/client/config/config.go[m
+[1m+++ b/client/config/config.go[m
+[36m@@ -26,6 +26,7 @@[m [mfunc NewConfig() *Client {[m
+ func Load(path string) *Client {[m
+ 	file, err := os.Open(path)[m
+ 	if err != nil {[m
+[32m+[m		[32mlog.Printf("error opening the JSON file\n")[m
+ 		log.Fatalf("%s", err)[m
+ 		return nil[m
+ 	}[m
+[36m@@ -39,5 +40,6 @@[m [mfunc Load(path string) *Client {[m
+ 		log.Fatalf("unable to read from client config file: %s", err)[m
+ 		return nil[m
+ 	}[m
+[32m+[m	[32mlog.Printf("finished reading config file \n")[m
+ 	return &config[m
+ }[m
+[1mdiff --git a/local/client_template.json b/local/client_template.json[m
+[1mindex 9137f88..bfd27cc 100644[m
+[1m--- a/local/client_template.json[m
+[1m+++ b/local/client_template.json[m
+[36m@@ -1,11 +1,11 @@[m
+ {[m
+     "Client_ID": "c1",[m
+     "Token": "tk1",[m
+[31m-    "URLs": ["http://127.0.0.1:50001/client/", "http://127.0.0.1:50002/client/", "http://127.0.0.1:50003/client/", "http://127.0.0.1:50004/client/", "http://127.0.0.1:50005/client/", "http://127.0.0.1:50006/client/"],[m
+[32m+[m[32m    "URLs": ["http://server1:50001/client/", "http://server2:50002/client/", "http://server3:50003/client/", "http://server4:50004/client/", "http://server5:50005/client/", "http://server6:50006/client/"],[m
+     "N": 6,[m
+     "T": 1,[m
+     "Q": 10631,[m
+[31m-    "N_secrets":2,[m
+[31m-    "M": 1, [m
+[32m+[m[32m    "N_secrets":10,[m
+[32m+[m[32m    "M": 2,[m[41m [m
+     "N_open":3[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[1mdiff --git a/local/local b/local/local[m
+[1mindex 4fb2e3d..6708461 100755[m
+Binary files a/local/local and b/local/local differ
+[1mdiff --git a/local/main.go b/local/main.go[m
+[1mindex b482dd5..b3bdadd 100644[m
+[1m--- a/local/main.go[m
+[1m+++ b/local/main.go[m
+[36m@@ -15,7 +15,7 @@[m [mimport ([m
+ [m
+ func main() {[m
+ [m
+[31m-	n_client := 6[m
+[32m+[m	[32mn_client := 50[m
+ 	n_exp := 1[m
+ 	n_input := []int{2} // For the first experiment, client's input has one value[m
+ [m
+[36m@@ -42,7 +42,7 @@[m [mfunc main() {[m
+ [m
+ 	output_gen.GenerateOPInput(n_exp, clientShareDue, t3, "./op_input")[m
+ [m
+[31m-	run(n_server, n_outputparty, n_client)[m
+[32m+[m	[32m// un(n_server, n_outputparty, n_client)[m
+ [m
+ }[m
+ [m
+[1mdiff --git a/outputparty/cmd/cmd b/outputparty/cmd/cmd[m
+[1mindex c6fcb90..5d5268d 100755[m
+Binary files a/outputparty/cmd/cmd and b/outputparty/cmd/cmd differ
+[1mdiff --git a/outputparty/cmd/experiments.json b/outputparty/cmd/experiments.json[m
+[1mindex a669540..755af16 100644[m
+[1m--- a/outputparty/cmd/experiments.json[m
+[1m+++ b/outputparty/cmd/experiments.json[m
+[36m@@ -1,4 +1,4 @@[m
+ [[m
+[31m-    {"Exp_ID":"exp1", "ClientShareDue":"2024-02-14 23:30:00", "ServerShareDue":"2024-02-21 18:26:00"}, [m
+[31m-    {"Exp_ID":"exp2", "ClientShareDue":"2024-02-14 23:30:00", "ServerShareDue":"2024-02-21 18:26:00"}[m
+[31m-][m
+\ No newline at end of file[m
+[32m+[m[32m    {"Exp_ID":"exp1", "ClientShareDue":"2000-01-01 01:40:00", "ServerShareDue":"2000-01-01 01:36:00"},[m[41m [m
+[32m+[m[32m    {"Exp_ID":"exp2", "ClientShareDue":"2000-01-01 01:40:00", "ServerShareDue":"2000-01-01 01:36:00"}[m
+[32m+[m[32m][m
+[1mdiff --git a/outputparty/config/outputparty.json b/outputparty/config/outputparty.json[m
+[1mindex 3fb32d9..48ecb9f 100644[m
+[1m--- a/outputparty/config/outputparty.json[m
+[1m+++ b/outputparty/config/outputparty.json[m
+[36m@@ -5,6 +5,6 @@[m
+     "Port": "50000",[m
+     "N": 6,[m
+     "T": 1,[m
+[31m-    "K": 1,[m
+[32m+[m[32m    "K": 10,[m
+     "Q": 10631[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[1mdiff --git a/server/cmd/cmd b/server/cmd/cmd[m
+[1mindex d15d2c1..fed877b 100755[m
+Binary files a/server/cmd/cmd and b/server/cmd/cmd differ
+[1mdiff --git a/server/cmd/experiments.json b/server/cmd/experiments.json[m
+[1mindex 6074160..36539e6 100644[m
+[1m--- a/server/cmd/experiments.json[m
+[1m+++ b/server/cmd/experiments.json[m
+[36m@@ -1,4 +1,4 @@[m
+ [[m
+[31m-    {"Exp_ID":"exp1", "ClientShareDue":"2024-02-21 18:18:00", "ComplaintDue":"2024-02-21 18:20:00","ShareBroadcastDue":"2024-02-21 18:23:00","Owner": "http://127.0.0.1:50000/serverShare/"}, [m
+[31m-    {"Exp_ID":"exp2", "ClientShareDue":"2024-02-21 18:18:00", "ComplaintDue":"2024-02-21 18:20:00","ShareBroadcastDue":"2024-02-21 18:23:00","Owner": "http://127.0.0.1:50000/serverShare/"}[m
+[32m+[m[32m    {"Exp_ID":"exp1", "ClientShareDue":"2000-01-01 01:30:00", "ComplaintDue":"2000-01-01 01:32:00","ShareBroadcastDue":"2000-01-01 01:35:00","Owner": "http://output:50000/serverShare/"},[m[41m [m
+[32m+[m[32m    {"Exp_ID":"exp2", "ClientShareDue":"2000-01-01 01:30:00", "ComplaintDue":"2000-01-01 01:32:00","ShareBroadcastDue":"2000-01-01 01:35:00","Owner": "http://output:50000/serverShare/"}[m
+ ][m
