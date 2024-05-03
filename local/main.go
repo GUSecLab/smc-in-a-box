@@ -42,7 +42,7 @@ func main() {
 
 	output_gen.GenerateOPInput(n_exp, clientShareDue, t3, "./op_input")
 
-	// un(n_server, n_outputparty, n_client)
+	// run(n_server, n_outputparty, n_client)
 
 }
 

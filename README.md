@@ -1,3 +1,13 @@
+# Shadow smc branch
+
+This is a branch of the dev3.0 branch that was used to run simulations in the Shadow network simulator.
+
+To generate configuration files change the settings in `/local/main.go` run `go build` in the `/local/` folder then run `./local`
+
+Additionally `outputparty/cmd/experiments.json` and `server/cmd/experiments.json` has had their due times modified because Shadow starts its time at 1/1/2000 at 12:00.
+
+The generated configuration files need the hostnames changed because of how the Shadow simulation works. The hostname is server/client + [number] where the number matches the last number of the port number. See the smc-config-files folder in shadow_script for more information. To generate new configuration files see the instructions above but know that you will likely need to change at least some of the hostnames in the files. 
+
 # Simple Prototype System for Private Statistics
 A simple prototype system for private statistics,  comprising clients, several secure multiparty computation servers, and output party(e.g., data analyst) written in Golang.
 
