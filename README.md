@@ -4,7 +4,7 @@ This repository contains the SCIF prototype, built in Golang. SCIF is a practica
 ## Build & Run on Cloud Provider
 The deployment and execution on Google Cloud are managed through ansible, and the source code of SCIF is under the tls_mal_mysql_new tag. Details are described in the following repository. https://github.com/GUSecLab/smc-in-a-box-ansible/tree/main
 
-During measurement, execution timestamps is collected and processed using scripts in the benches folder to determine computation runtime. Network traffic between parties is captured by tcpdump, managed via ansible, and packet lengths are analyzed using Wireshark.
+During measurement, execution timestamps is collected and processed using scripts in the benches directory to determine computation runtime. Network traffic between parties is captured by tcpdump, managed via ansible, and packet lengths are analyzed using Wireshark.
 
 ## Build & Run Manually
 ### 1. Building environment
@@ -163,22 +163,22 @@ Key Fields:
 - Owner: URL of the output party for servers to submit aggregated shares.
 
 ### 3. Run the software
-Before starting any party, in the smc-in-a-box folder, run the following command line to ensure that all dependencies are properly fetched.
+Before starting any party, in the smc-in-a-box directory, run the following command line to ensure that all dependencies are properly fetched.
 ```
 $ go mod tidy
 ```
 
-To start a server, in the server/cmd folder, compile then run:
+To start the server, go to the server/cmd directory, run go build, and then run:
 ```
 $ ./cmd -confpath="path_to_server_config_file" -inputpath="path_to_experiments_file" -logpath="path_to_log_folder" -n_client=num_of_clients
 ```
 
-To start an output party, in the outputparty/cmd folder, compile then run:
+To start an output party, go to the outputparty/cmd directory, run go build, and then run:
 ```
 $ ./cmd -confpath="path_to_output_party_config_file" -inputpath="path_to_experiments_file" -logpath="path_to_log_folder" -n_client=num_of_clients
 ```
 
-To start a client, in the folder client/cmd, compile then run
+To start a client, go to the client/cmd directory, run go build, and then run:
 ```
 $ ./cmd -confpath=“path_to_client_config_file” -inputpath=“path_to_input_file” -logpath="path_to_log_folder"
 ``` 
@@ -192,7 +192,7 @@ Parameter Descriptions:
    
  **Note:** Servers and the output party must start before clients.
 
-The above commands are for running each party on different physical machines. To start a cluster of servers, an output party, and a cluster of clients (all on the same machine), use the source code with the local tag. Go to the local folder and run:
+The above commands are for running each party on different physical machines. To start a cluster of servers, an output party, and a cluster of clients (all on the same machine), use the source code with the local tag. Go to the local directory, run go build, and then run:
 ```
 $ ./local
 ```
